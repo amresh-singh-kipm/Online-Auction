@@ -155,8 +155,18 @@ a.dropdown-item {
 }
 
 
-
-.Auth-form-container {
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* color: var(--bs-modal-color); */
+    pointer-events: auto;
+    background-color:unset !important;
+    background-clip:unset !important;
+    border: 0 !important;
+    border-radius: none !important;
+    outline: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -505,6 +515,7 @@ button.Bidbtn:visited {
   width: 100% !important;
   height: 250px !important;
   object-fit: cover !important;
+  border-radius: 20px 20px 0px 0px !important;
 }
 
 p#Timer {
@@ -540,12 +551,22 @@ p#Timer {
   padding: 11px 20px;
 }
 
+.mybidSection-content .card-body h5 {
+  font-weight: 500;
+  background-color: #f1f1f1;
+  padding: 10px 0px;
+  border-radius: 10px;
+  color: #828282;
+  text-align: center;
+  font-size: 18px;
+}
+
 /* My Account css end*/
 
 
 /* Buyer Form Bid CSS Start */
 
-textarea#productDescription:focus {
+textarea.productDescription:focus {
   box-shadow: none;
   outline: none;
 }
@@ -596,7 +617,7 @@ textarea#productDescription:focus {
 }
 
 li.Heading-Content {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .Contactus-Page .contact-info li.Heading h6 {
@@ -610,7 +631,7 @@ li.Heading-Content {
 }
 
 .MapSection {
-  padding: 50px 0px 50px 0px;
+  padding-bottom: 50px;
   border-radius: 20px;
 }
 
@@ -623,12 +644,139 @@ li.Heading-Content {
 
 .MapSection iframe.gmap_iframe {
   border-radius: 20px;
+  width: 100%;
+  height: 250px;
 }
 
-textarea#productDescription {
+textarea.productDescription {
   resize: none;
 }
 
 /* Contact Us CSS END */
 
 
+
+/* Footer CSS START */
+.footerSection {
+  background-color: black;
+  color: white;
+  padding: 50px;
+  margin-top: 50px;
+}
+
+img.footerLogo {
+  width: 100px;
+  object-fit: cover;
+  padding-bottom: 20px;
+}
+
+.social-icons i.fab {
+  font-size: 30px;
+  color: white;
+}
+
+.footerContent li {
+  margin-bottom: 15px;
+}
+
+.footerContent p {
+  margin-bottom: 0px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.social-icons a {
+  margin-right: 10px;
+}
+
+.social-icons a i {
+  font-size: 30px;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1);
+  transition: all 200ms ease-in;
+  transform: scale(1);
+}
+
+.social-icons a:hover i {
+  z-index: 2;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.3);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.3);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.3);
+  transition: all 200ms ease-in;
+  transform: scale(1.3);
+}
+
+.footerContent h6 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.footerContent i.fas {
+  font-size: 15px;
+  padding-right: 10px;
+}
+
+.footerContent a {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}
+
+.footerContent a:hover {
+  color: #E21818;
+}
+
+.newsletter-footer input.email {
+  border: 0;
+  padding: 15px;
+  font-weight: 500;
+  font-size: 15px;
+  outline: 0;
+  width: 70%;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.newsletter-footer input.submit {
+  background: #E21818;
+  border: 0;
+  color: white;
+  padding: 15px 0px;
+  width: 30%;
+  font-size: 14px;
+  outline: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.newsletter-footer input.submit:hover {
+  background-color: #BD2000;
+}
+
+/* Footer CSS END */
+
+
+/* Copyright CSS START */
+
+.CopyrightSection {
+  padding: 20px;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.CopyrightSection p {
+  margin-bottom: 0px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* Copyright CSS END */

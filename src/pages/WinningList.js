@@ -1,6 +1,6 @@
 import React from "react";
 import { Breadcrumb, Button, Card } from "react-bootstrap";
-import ProfileNavbar from "../Navbar/ProfileNavbar";
+import ProfileNavbar from "../component/Navbar/ProfileNavbar";
 
 function WinningList() {
   return (

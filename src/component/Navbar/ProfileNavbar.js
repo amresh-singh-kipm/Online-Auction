@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { routerChanging } from "../redux/action/SigninAction";
+import { routerChanging } from "../../redux/action/SigninAction";
 import { useDispatch } from "react-redux";
 // import { signOutUser } from "../redux/action/SigninAction";
 
@@ -30,8 +30,8 @@ function ProfileNavbar() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/seller">
-              My Product
+            <Link className="nav-link" to="/order">
+              My Order
             </Link>
           </li>
           <li className="nav-item">

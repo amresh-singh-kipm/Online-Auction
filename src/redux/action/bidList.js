@@ -16,7 +16,7 @@ export const getbidList = (bidList) => {
 //FUNCTION TO FETCH MY BIDLIST
 export const mybidList = () => {
   return (dispatch) => {
-    fetch(`${config.host}${config.bid.bidList}/${userId._id}`)
+    fetch(`${config.host}${config.bid.bidList}/${userId?._id}`)
       .then((resp) => resp.json())
       .then((resp) => dispatch(getbidList(resp)))
       .then(() => dispatch(apiIsLoading(false)))
@@ -27,12 +27,13 @@ export const mybidList = () => {
 //FUNCTION TO SUBMIT A BID
 export const submitBid = (productId,product) => {
   return (dispatch) => {
-    fetch(`${config.host}${config.bid.createBid}/${userId._id}/${productId}`,{
+    fetch(`${config.host}${config.bid.createBid}/${userId?._id}/${productId}`,{
         method:'POST',
         headers:config.headers,
         body:JSON.stringify(product)
     })
     .then((resp)=>resp.json())
+    .then((resp)=>dispatch(apiIsLoading(false)))
     .catch((error)=>console.log(error))
   };
 };

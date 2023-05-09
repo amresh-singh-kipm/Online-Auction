@@ -7,19 +7,23 @@ import {
 } from "../redux/action/SigninAction";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "react-bootstrap";
+import Form from "../component/Form/Form";
 
 function SignUp() {
   //STATE TO SAVE USER
-  const initialUserDetails = {
-    name: "",
-    email: "",
-    encry_password: "",
-    mobile: "",
-  };
-  const [userDetails, setUserDetails] = useState(initialUserDetails);
+  const [userDetails, setUserDetails] = useState("");
 
+  //FEILD FOR CREATING FORM
+  const formField = [
+    { fieldName: "Full Name", name: "name" },
+    { fieldName: "Email Address", name: "email" },
+    { fieldName: "Password", name: "encry_password" },
+    { fieldName: "Mobile Number", name: "mobile" },
+  ];
   //FUNCTION TO HANDLE INPUT
   const handleChange = (e) => {
+    console.log("first", userDetails);
+    console.log(e.target);
     const { name, value } = e.target;
     setUserDetails({ ...userDetails, [name]: value });
   };
@@ -29,8 +33,7 @@ function SignUp() {
   const dispatch = useDispatch();
   //FUNCTION TO REGISTER USER
 
-  const signUp = (e) => {
-    e.preventDefault();
+  const signUp = () => {
     dispatch(signUpUser(userDetails));
     dispatch(openSignInModal(true));
     dispatch(openSignUpModal(false));
@@ -42,70 +45,29 @@ function SignUp() {
     dispatch(openSignInModal(isSignIn === true ? false : true));
     dispatch(openSignUpModal(isSign === true ? false : true));
   };
+  const closeModal = () => {
+    dispatch(openSignUpModal(isSign === true ? false : true));
+  };
   return (
-    <Modal show={isSign}>
-      <div className="Auth-form-container">
-        <form className="Auth-form">
-          <div className="Auth-form-content">
-            <h3 className="Auth-form-title">Sign Up</h3>
-            <div className="text-center Auth-form-text">
-              Already registered? <span onClick={changeAuthMode}>Sign In</span>
-            </div>
-            <div className="form-group mt-3">
-              <label>Full Name</label>
-              <input
-                type="text"
-                className="form-control mt-2"
-                placeholder="e.g Jane Doe"
-                name="name"
-                value={userDetails.name}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-            <div className="form-group mt-3">
-              <label>Email address</label>
-              <input
-                type="email"
-                className="form-control mt-2"
-                placeholder="Email Address"
-                name="email"
-                value={userDetails.email}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-            <div className="form-group mt-3">
-              <label>Mobile Number</label>
-              <input
-                type="Number"
-                className="form-control mt-2"
-                placeholder="+91"
-                name="mobile"
-                value={userDetails.mobile}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-            <div className="form-group mt-3">
-              <label>Password</label>
-              <input
-                type="password"
-                className="form-control mt-2"
-                placeholder="Password"
-                name="encry_password"
-                value={userDetails.encry_password}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-            <div className="d-grid mt-4 submitbtn">
-              <button type="submit" className="btn" onClick={signUp}>
-                Submit
-              </button>
-            </div>
-            <p className="forgotlink mt-3">
-              <a href="#">Forgot Password?</a>
-            </p>
+    <Modal show={isSign} onHide={closeModal}>
+      {/* <div className="Auth-form-container"> */}
+      <form className="Auth-form">
+        <div className="Auth-form-content">
+          <h3 className="Auth-form-title">Sign Up</h3>
+          <div className="text-center Auth-form-text">
+            Already registered? <span onClick={changeAuthMode}>Sign In</span>
           </div>
-        </form>
-      </div>
+          <Form field={formField} handleChange={handleChange} />
+          <div className="d-grid mt-4 submitbtn">
+            <button type="button" className="btn" onClick={signUp}>
+              Submit
+            </button>
+          </div>
+          <p className="forgotlink mt-3">
+            <a href="#">Forgot Password?</a>
+          </p>
+        </div>
+      </form>
     </Modal>
   );
 }

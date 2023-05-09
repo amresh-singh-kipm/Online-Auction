@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/js/bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { openSignInModal, routerChanging } from "../redux/action/SigninAction";
+import { openSignInModal, routerChanging } from "../../redux/action/SigninAction";
 import { Link } from "react-router-dom";
-import SignUp from "../pages/SignUp";
-import Signin from "../pages/Signin";
+import SignUp from "../../pages/SignUp";
+import Signin from "../../pages/Signin";
+import SellForm from "../../pages/SellForm";
 
 function NavbarComp() {
   const isSign = useSelector((state) => state?.isSignIn?.isOpen);
@@ -28,15 +29,20 @@ function NavbarComp() {
     setIsSignin(false);
     dispatch(routerChanging(false));
   };
-  const [showModal, setShowModal] = useState(true);
-  const handleClose = (e) => {
-    console.log(e.target);
-    // if(e.target==null||e.target==undefined||!(e.target)){
-    //   setShowModal(false)
-    // }
+  const [showModal, setShowModal] = useState(false);
+  // const handleClose = (e) => {
+  //   console.log(e.target);
+  //   // if(e.target==null||e.target==undefined||!(e.target)){
+  //   //   setShowModal(false)
+  //   // }
+  // };
+  const openModal = () => {
+    console.log("fuction is clicked");
+    setShowModal(true);
   };
   return (
-    <nav className="navbar navbar-expand-sm" onClick={(e)=>handleClose(e)}>
+    <>
+    <nav className="navbar navbar-expand-sm">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img src="images/logo.png" />
@@ -69,9 +75,10 @@ function NavbarComp() {
                   </Link>
                   <ul className="dropdown-menu underlinks">
                     <li>
-                      <Link className="dropdown-item" to="/sell">
+                      <Link className="dropdown-item" onClick={openModal}>
                         Sell Items
                       </Link>
+                      <SellForm showModal={showModal} setShowModal={setShowModal} />
                     </li>
                     <li>
                       <Link className="dropdown-item" to="/buy">
@@ -113,9 +120,10 @@ function NavbarComp() {
           </ul>
         </div>
       </div>
+    </nav>
       <Signin />
       <SignUp />
-    </nav>
+      </>
   );
 }
 

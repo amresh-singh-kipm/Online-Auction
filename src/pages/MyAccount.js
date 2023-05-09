@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { mybidList, updateBid } from "../redux/action/bidList";
-import ProfileNavbar from "../Navbar/ProfileNavbar";
+import ProfileNavbar from "../component/Navbar/ProfileNavbar";
 import { Modal } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
 
