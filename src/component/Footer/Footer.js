@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="FooterCopyright">
+    <div className="FooterCopyright mt-5">
       <div className="footerSection">
         <div className="row">
           <div className="col-lg-3 col-md-3 col-sm-6">

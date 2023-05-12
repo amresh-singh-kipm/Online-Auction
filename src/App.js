@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import PublicRouter from "./component/Router/PublicRouter";
 import PrivateRouter from "./component//Router/PrivateRouter";
 import { useDispatch, useSelector } from "react-redux";
-import { getToken } from "./utils/constant";
 import { routerChanging } from "./redux/action/SigninAction";
 
 function App() {

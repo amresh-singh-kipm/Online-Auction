@@ -3,13 +3,21 @@ import { Action_Type } from "../constant/Action-Type";
 import { apiIsLoading } from "./SigninAction";
 
 //TOKEN
-const userId =JSON.parse(localStorage.getItem("user")) 
+const userId = JSON.parse(localStorage.getItem("user"));
 
 //ACTION TO GET BIDLIST
 export const getbidList = (bidList) => {
   return {
     type: Action_Type.READ_BID_LIST,
     payload: bidList,
+  };
+};
+//ACTION TO GET BID BY ID
+
+export const getBidById = (bid) => {
+  return {
+    type: Action_Type.READ_BID_LIST_BY_ID,
+    payload: bid,
   };
 };
 
@@ -24,28 +32,37 @@ export const mybidList = () => {
   };
 };
 
-//FUNCTION TO SUBMIT A BID
-export const submitBid = (productId,product) => {
+export const myBidById = (id) => {
   return (dispatch) => {
-    fetch(`${config.host}${config.bid.createBid}/${userId?._id}/${productId}`,{
-        method:'POST',
-        headers:config.headers,
-        body:JSON.stringify(product)
-    })
-    .then((resp)=>resp.json())
-    .then((resp)=>dispatch(apiIsLoading(false)))
-    .catch((error)=>console.log(error))
+    fetch(`${config.host}${config.bid.bidById}/${id}`)
+      .then((resp) => resp.json())
+      .then((resp) => dispatch(getBidById(resp)))
+      .catch((error) => console.log(error));
   };
 };
 
-export const updateBid = (myBidId,bid) =>{
-  return(dispatch)=>{
-    fetch(`${config.host}${config.bid.updateBid}/${myBidId}`,{
-      method:'PUT',
-      headers:config.headers,
-      body:JSON.stringify(bid)
+//FUNCTION TO SUBMIT A BID
+export const submitBid = (productId, product) => {
+  return (dispatch) => {
+    fetch(`${config.host}${config.bid.createBid}/${userId?._id}/${productId}`, {
+      method: "POST",
+      headers: config.headers,
+      body: JSON.stringify(product),
     })
-    .then((resp)=>resp.json())
-    .catch((error)=>console.log(error))
-  }
-}
+      .then((resp) => resp.json())
+      .then((resp) => dispatch(apiIsLoading(false)))
+      .catch((error) => console.log(error));
+  };
+};
+
+export const updateBid = (myBidId, bid) => {
+  return (dispatch) => {
+    fetch(`${config.host}${config.bid.updateBid}/${myBidId}`, {
+      method: "PUT",
+      headers: config.headers,
+      body: JSON.stringify(bid),
+    })
+      .then((resp) => resp.json())
+      .catch((error) => console.log(error));
+  };
+};

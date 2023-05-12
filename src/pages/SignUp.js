@@ -5,7 +5,6 @@ import {
   openSignUpModal,
   signUpUser,
 } from "../redux/action/SigninAction";
-import { useNavigate } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import Form from "../component/Form/Form";
 
@@ -17,7 +16,7 @@ function SignUp() {
   const formField = [
     { fieldName: "Full Name", name: "name" },
     { fieldName: "Email Address", name: "email" },
-    { fieldName: "Password", name: "encry_password" },
+    { fieldName: "Password", name: "password" },
     { fieldName: "Mobile Number", name: "mobile" },
   ];
   //FUNCTION TO HANDLE INPUT
@@ -40,7 +39,6 @@ function SignUp() {
   };
 
   //FUNCTON TO NAVIGATE SIGNIN PAGE
-  const navigate = useNavigate();
   const changeAuthMode = () => {
     dispatch(openSignInModal(isSignIn === true ? false : true));
     dispatch(openSignUpModal(isSign === true ? false : true));
@@ -64,7 +62,7 @@ function SignUp() {
             </button>
           </div>
           <p className="forgotlink mt-3">
-            <a href="#">Forgot Password?</a>
+            <a href="/">Forgot Password?</a>
           </p>
         </div>
       </form>

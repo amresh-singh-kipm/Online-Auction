@@ -3,14 +3,19 @@
 /* eslint-disable react/jsx-no-undef */
 import React from "react";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 function ContactUs() {
+  const navigate = useNavigate()
+  const goBack =() =>{
+navigate(-1)
+  }
   return (
     <div id="ContactusSection">
     <div className="container">
       <div className="Breadcrumb">
         <Breadcrumb>
-          <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#8594;
+          <Breadcrumb.Item onClick={()=>navigate('/')}>Home</Breadcrumb.Item>&#8594;
           <Breadcrumb.Item active>Contact Us</Breadcrumb.Item>
         </Breadcrumb>
       </div>
@@ -57,7 +62,7 @@ function ContactUs() {
                   />
                 </div>
                 <div className="d-grid mb-3 submitbtn">
-                  <button type="submit" className="btn">
+                  <button type="button" className="btn" onClick={goBack}>
                     Send Message
                   </button>
                 </div>

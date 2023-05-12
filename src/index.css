@@ -155,23 +155,45 @@ a.dropdown-item {
 }
 
 
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  background-color: #00000030;
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
+
+/* CSS given by Amresh Start */
+
 .modal-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    /* color: var(--bs-modal-color); */
-    pointer-events: auto;
-    background-color:unset !important;
-    background-clip:unset !important;
-    border: 0 !important;
-    border-radius: none !important;
-    outline: 0;
+  background-color: unset !important;
+  background-clip: unset !important;
+  border: unset !important;
+  border-radius: unset !important;
+  outline: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 100px 0px;
 }
+
+/* CSS given by Amresh End */
 
 .Auth-form {
   width: 450px;
@@ -277,7 +299,7 @@ a.dropdown-item {
 
 /* CardSection Section CSS START */
 .Cardinfo-Wrapper {
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 50px;
 }
 
@@ -299,15 +321,16 @@ a.dropdown-item {
   font-weight: 400;
 }
 
-.Cardcontent-Wrapper {
-  margin-bottom: 100px;
-}
-
 .card {
-  border-radius: 20px !important;
   margin-bottom: 25px !important;
   position: relative !important;
-  box-shadow: 2px 2px 10px #6e6b6b60 !important;
+  box-shadow: 2px 2px 8px #6e6b6b60 !important;
+  transition: 0.3s;
+  border-radius: 10px !important;
+}
+
+div#AuctionPage {
+  padding-bottom: 50px;
 }
 
 .card:hover {
@@ -315,21 +338,24 @@ a.dropdown-item {
   transition: 0.2s ease-in;
 }
 
+.PriceSubmit {
+  display: flex;
+  justify-content: space-between;
+}
+
 .cardRate span {
-  font-size: 25px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
 }
 
 .cardRate {
-  position: absolute;
   background-color: #0EAA00;
-  right: 5%;
-  top: 45%;
-  content: "";
-  border-radius: 50%;
+  border-radius: 20px;
   color: white;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  padding: 5px 15px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -337,14 +363,15 @@ a.dropdown-item {
 
 .Cardcontent-Wrapper img.card-img {
   width: 100% !important;
-  height: 250px !important;
+  height: 200px !important;
   object-fit: cover !important;
-  border-radius: 20px 20px 0px 0px !important;
+  border-radius: 5px 5px 0px 0px !important;
 }
 
-.card-title {
-  font-weight: bold !important;
-  font-size: 24px !important;
+h4.card-title {
+  font-weight: 600 !important;
+  font-size: 22px !important;
+  margin-bottom: 8px;
 }
 
 button.Bidbtn {
@@ -352,8 +379,9 @@ button.Bidbtn {
   background-color: white;
   color: #E21818;
   font-size: 16px;
-  padding: 10px 20px;
+  padding: 2px 15px;
   border-radius: 20px;
+  width: 150px;
   font-weight: 600;
 }
 
@@ -363,27 +391,60 @@ button.Bidbtn:hover {
   color: white;
 }
 
-button.Bidbtn:focus,
-button.Bidbtn:active,
-button.Bidbtn:visited {
-  box-shadow: none;
-  outline: none;
+button.Bidbtn:active {
+  box-shadow: none !important;
+  outline: none !important;
+  background-color: #E21818 !important;
+  color: white !important;
+  border: none !important;
 }
 
 .card-body {
-  padding-bottom: 25px !important;
-  padding-top: 25px !important;
+  padding-bottom: 30px !important;
 }
 
-.card-body span {
-  background-color: #ECECEC;
-  color: #787878;
-  border: 1px solid #CBCBCB;
-  padding: 10px;
+.card-body i.fas.fa-gavel {
+  padding-right: 5px;
+}
+
+.card-body p {
+  color: #7b7b7b;
+  border: 1px solid #787878;
+  padding: 2px 15px;
   border-radius: 20px;
-  font-size: 16px;
+  font-size: 12px;
   display: inline-block;
-  font-weight: normal;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+span.card-timer {
+  font-size: 16px;
+  font-weight: 500;
+  color: #7b7b7b;
+}
+
+.bidstimer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.unavailable {
+  background-color: lightgrey;
+  width: 100%;
+  cursor: not-allowed;
+}
+
+.unavailable span {
+  color: #828080;
+}
+
+.cardtext span {
+  font-size: 16px;
+  display: block;
+  padding-bottom: 15px;
+  color: gray;
 }
 
 .Cardbidbtn {
@@ -440,6 +501,7 @@ button.Bidbtn:visited {
   background-color: #f1f1f1;
   border-radius: 20px;
   margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .leftMenu li.nav-item:hover {
@@ -515,7 +577,7 @@ button.Bidbtn:visited {
   width: 100% !important;
   height: 250px !important;
   object-fit: cover !important;
-  border-radius: 20px 20px 0px 0px !important;
+  border-radius: 10px 10px 0px 0px;
 }
 
 p#Timer {
@@ -541,15 +603,33 @@ p#Timer {
   border: 1px solid #E21818;
 }
 
-.winbidSection .input-group .btn.btn-primary {
+.winbidSection .input-group .btn.search {
   border-radius: 20px;
   background-color: #E21818;
+  color: white;
   position: absolute;
   border: none;
   top: 0;
   right: 0;
-  padding: 11px 20px;
+  padding: 11px 30px;
 }
+
+.winbidSection .input-group .btn.search:hover {
+  background-color: #BD2000;
+}
+
+.myordertab .card-body span.card-timer {
+  display: none;
+}
+
+.myordertab .card-body .PriceSubmit {
+  display: none;
+}
+
+.Wintab .card-body span.card-timer {
+  display: none;
+}
+
 
 .mybidSection-content .card-body h5 {
   font-weight: 500;
@@ -590,6 +670,9 @@ textarea.productDescription:focus {
 
 /* Contact Us CSS START */
 
+#ContactusSection{
+  padding-top: 100px;
+}
 .Contactus-Page {
   background-color: white !important;
   color: black !important;
@@ -598,9 +681,9 @@ textarea.productDescription:focus {
 }
 
 .Contactus-Page h4 {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .Contactus-Page .Auth-form-content label {
@@ -609,7 +692,7 @@ textarea.productDescription:focus {
 
 .Contactus-Page .Auth-form-content {
   padding: 0px;
-  margin-right: 100px;
+  margin-right: 40px;
 }
 
 .Contactus-Page .contact-info {
@@ -617,17 +700,19 @@ textarea.productDescription:focus {
 }
 
 li.Heading-Content {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .Contactus-Page .contact-info li.Heading h6 {
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.Contactus-Page .contact-info li.Heading-Content span {
-  color: #787878;
-  font-size: 20px;
+.Contactus-Page .contact-info li.Heading-Content p {
+  color: black;
+  font-size: 16px;
+  margin-bottom: 0px;
+  line-height: 40px;
 }
 
 .MapSection {
@@ -652,16 +737,23 @@ textarea.productDescription {
   resize: none;
 }
 
+.Heading-Content i.fas {
+  color: #E21818;
+  font-size: 16px;
+  padding-right: 10px;
+}
+
 /* Contact Us CSS END */
 
 
 
 /* Footer CSS START */
 .footerSection {
-  background-color: black;
+  background-image: url(/public/images/footerimage.jpg);
+  width: 100%;
+  content: "";
   color: white;
   padding: 50px;
-  margin-top: 50px;
 }
 
 img.footerLogo {
@@ -671,22 +763,26 @@ img.footerLogo {
 }
 
 .social-icons i.fab {
-  font-size: 30px;
+  font-size: 25px;
   color: white;
 }
 
+.social-icons {
+  padding: 10px 0px;
+}
+
 .footerContent li {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .footerContent p {
   margin-bottom: 0px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
 }
 
 .social-icons a {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .social-icons a i {
@@ -714,7 +810,7 @@ img.footerLogo {
 }
 
 .footerContent h6 {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 30px;
 }
@@ -725,7 +821,7 @@ img.footerLogo {
 }
 
 .footerContent a {
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   text-decoration: none;
 }
@@ -736,9 +832,9 @@ img.footerLogo {
 
 .newsletter-footer input.email {
   border: 0;
-  padding: 15px;
+  padding: 10px 15px;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 14px;
   outline: 0;
   width: 70%;
   border-radius: 20px 0px 0px 20px;
@@ -748,7 +844,7 @@ img.footerLogo {
   background: #E21818;
   border: 0;
   color: white;
-  padding: 15px 0px;
+  padding: 10px 0px;
   width: 30%;
   font-size: 14px;
   outline: 0;
@@ -768,7 +864,7 @@ img.footerLogo {
 
 .CopyrightSection {
   padding: 20px;
-  background-color: red;
+  background-color: black;
   color: white;
   text-align: center;
 }
@@ -776,7 +872,261 @@ img.footerLogo {
 .CopyrightSection p {
   margin-bottom: 0px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
 }
 
+
 /* Copyright CSS END */
+
+
+/* Product Sell CSS START */
+
+
+/* Product Sell CSS END */
+
+
+/* About Us CSS START */
+
+#aboutustab{
+  padding-top: 100px;
+}
+.Aboutus-Experience {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0px 6px 18px 0px rgba(16, 5, 54, 0.17);
+}
+
+.Aboutus-Image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.Aboutus-Content h5 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.Aboutus-Content h4 {
+  font-size: 35px;
+  color: #E21818;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.Aboutus-Content h3 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.Aboutus-Award {
+  display: flex;
+  align-items: end;
+  text-align: center;
+  padding: 30px 0px;
+}
+
+.Award-Content {
+  padding-right: 50px;
+}
+
+.Award-Content p {
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.Award-Image {
+  padding-bottom: 10px;
+}
+
+.Aboutus-Content {
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.StartSelling {
+  position: relative;
+  margin: 50px 0px;
+}
+
+.StartSelling img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.StartSelling-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.StartSelling-content h4 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.StartSelling-content p {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.StartSelling-content .btn.Registerbtn {
+  padding: 10px 20px;
+}
+
+.StartSelling-content .btn.Registerbtn {
+  padding: 10px 50px;
+}
+
+.Item-Auctioned {
+  padding: 50px 0px;
+}
+
+.Item-AuctionContent {
+  padding: 20px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #0d7be3;
+  flex-direction: column;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.ItemAuction {
+  margin-top: 50px;
+}
+
+.Item-AuctionContent:hover {
+  background: -webkit-linear-gradient(88deg, #432eb9 4%, #6e48d3 58%, #9961ec 100%) !important;
+  color: white;
+  border: none;
+  transition: 0.3s;
+}
+
+.Item-AuctionContent h4 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.Item-AuctionContent p {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
+.Aboutus-Image {
+  background-color: white;
+}
+
+/* About Us CSS END */
+
+
+/* Product Sell CSS START */
+#ProductSell{
+  padding-top: 150px;
+}
+.ProductSell-Section {
+  background-color: white !important;
+  color: black !important;
+  padding: 50px;
+  box-shadow: 0px 6px 18px 0px rgba(16, 5, 54, 0.17);
+}
+
+.slider-image img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.slider-image {
+  border-radius: 5px !important;
+  overflow: hidden;
+}
+
+.slick-dots li button:before {
+  font-size: 10px !important;
+}
+
+/* 
+.slider .slick-prev,
+.slider .slick-next {
+  background-color: black;
+  color: white;
+}
+*/
+.price-table li.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-content h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.slider-content p {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #787878;
+  text-align: justify;
+}
+
+.header span.details,
+.header h5.info {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+}
+
+.slider-content {
+  padding-left: 30px;
+}
+
+.slider-content button.Bidbtn {
+  padding: 15px 30px;
+  width: 100%;
+}
+
+.slider-content .Cardbidbtn {
+  justify-content: end;
+}
+
+.amountpay {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-content .form-outline {
+  width: 70%;
+}
+
+.slider-content .form-outline input {
+  padding: 15px;
+}
+
+/* Product Sell CSS END */
+
+.modal-header {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--bs-modal-header-padding);
+	border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+	border-radius: var(--bs-modal-inner-border-radius) !important;
+	border-top-right-radius: var(--bs-modal-inner-border-radius);
+	color: white;
+	border: 2px solid aliceblue;
+}

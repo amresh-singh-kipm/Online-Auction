@@ -26,6 +26,22 @@ export const signUpReducer = (state = { isSign: false }, { type, payload }) => {
   }
 };
 
+//SUCCESS MODAL REDUCER
+export const successModalReducer = (
+  state = { isOpen: false },
+  { type, payload }
+) => {
+  switch (type) {
+    case Action_Type.SUCCESS_MODAL:
+      return {
+        ...state,
+        isOpen: payload,
+      };
+    default:
+      return state;
+  }
+};
+
 //API LOADER REDUCER
 export const apiLoadingReducer = (
   state = { loading: true },
@@ -71,3 +87,5 @@ export const routerChangeReducer = (
       return state;
   }
 };
+
+

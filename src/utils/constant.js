@@ -13,12 +13,14 @@ export const config = {
   product: {
     getALlProduct: "/products",
     createProduct: "/createproduct",
+    getProductById: "/product",
   },
   bid: {
     bidList: "/buyer/bidlist",
     createBid: "/buyer",
     deleteBid: "/buyer/deletebid",
     updateBid: "/buyer/updatebid",
+    bidById: "/buyer/mybid",
   },
   headers: {
     Accept: "application/json",

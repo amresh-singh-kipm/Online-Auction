@@ -7,15 +7,9 @@ import Card from "react-bootstrap/Card";
 import { productList } from "../redux/action/ProductListAction";
 import { useDispatch, useSelector } from "react-redux";
 import { submitBid } from "../redux/action/bidList";
-import { Modal } from "react-bootstrap";
-import { useLocation, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const ProductList = () => {
-  //SEARCHING ID FOR PLACING BID
-  const location = useLocation();
-  const search = new URLSearchParams(location.search);
-  const id = search.get("id");
-
   //REDUX STATE FOR PRODUCT LIST
   const productlist = useSelector(
     (state) => state.productList?.product?.products
@@ -43,10 +37,8 @@ const ProductList = () => {
   const navigate = useNavigate();
 
   //MODAL FOR PLACING BIDS
-  const [isOpen, setIsOpen] = useState(false);
   const openModal = (id) => {
-    setIsOpen(true);
-    navigate(`/buy?id=${id}`);
+    navigate(`/buy/product?id=${id}`);
   };
 
   //FUNCTION FOR PLACING BIDS
@@ -61,75 +53,77 @@ const ProductList = () => {
             <img src="/images/loading.png" alt="loading" width={"100px"} />
           </div>
         ) : (
-          <div className="Cardinfo-Wrapper text-center">
-            <span>AUCTIONS</span>
-            <h4>
-              Current <span>Auctions</span>
-            </h4>
+          <>
+            <div className="Cardinfo-Wrapper text-center">
+              <span>AUCTIONS</span>
+              <h4>
+                Current <span>Auctions</span>
+              </h4>
+            </div>
             <div className="Cardcontent-Wrapper">
               <Container>
                 <Row>
                   {productlist &&
                     productlist.map((product) => {
-                      const { _id, name, description, location, price, image,expireBid } =
-                        product;
+                      const {
+                        _id,
+                        name,
+                        description,
+                        location,
+                        price,
+                        image,
+                        expireBid,
+                      } = product;
+                      // const times = expireBid.toTimeString()
+                      // const hours = expireBid.getHours()
+                      // const minutes = expireBid.getMinutes()
+                      // const seconds = expireBid.getSeconds()
                       return (
                         <Col
-                          className="col-lg-3 col-md-3 col-sm-6 col-12"
+                          className="col-lg-3 col-md-6 col-sm-6 col-12"
                           key={product._id}
                         >
                           <Card>
                             <Card.Img src={image} width={"550px"} />
                             <Card.Body>
-                              <Card.Title> {name}</Card.Title>
-                              <Card.Text>{description}</Card.Text>
-                              <div className="Cardbidbtn">
-                                <span>250 Bids</span>
-                                <Button
-                                  className="Bidbtn"
-                                  onClick={() => openModal(_id)}
-                                >
-                                  Submit a Bid
-                                </Button>
+                              <h4 className="card-title">{name}</h4>
+                              <div className="bidstimer">
+                                <p className="peoplebids">
+                                  <span>
+                                    <i className="fas fa-gavel"></i>
+                                  </span>
+                                  250 Bids
+                                </p>
+                                <span className="card-timer">
+                                  {/* {times} */}
+                                  {/* {hours}hrs:{minutes}min:{seconds}sec */}
+                                </span>
+                              </div>
+                              <div className="cardtext">
+                                <span>{description.slice(0,110)}...</span>
+                              </div>
+                              <div className="PriceSubmit">
+                                <div className="cardRate">
+                                  <span>&#8377;{price}</span>
+                                </div>
+                                <div className="Cardbidbtn">
+                                  <Button
+                                    className="Bidbtn"
+                                    onClick={() => openModal(_id)}
+                                  >
+                                    Submit a Bid
+                                  </Button>
+                                </div>
                               </div>
                             </Card.Body>
-                            <div className="cardRate">
-                              <span>&#8377;{price}</span>
-                            </div>
                           </Card>
                         </Col>
                       );
                     })}
-
-                  {/* MODAL FOR PLACING BIDS */}
-                  <Modal show={isOpen}>
-                    <Modal.Header style={{ justifyContent: "center" }}>
-                      <form>
-                        <div className="form-control">
-                          <label>My Bid</label>
-                          <input
-                            type="text"
-                            name="my_bid"
-                            value={myBid.my_bid}
-                            onChange={(e) => handleChange(e)}
-                          />
-                          <button
-                            type="button"
-                            className="Bidbtn mt-5"
-                            style={{ alignContent: "center" }}
-                            onClick={() => onSubmit(id)}
-                          >
-                            Place Bid
-                          </button>
-                        </div>
-                      </form>
-                      <h1>Place a bid</h1>
-                    </Modal.Header>
-                  </Modal>
                 </Row>
               </Container>
             </div>
-          </div>
+          </>
         )}
       </div>
     </>

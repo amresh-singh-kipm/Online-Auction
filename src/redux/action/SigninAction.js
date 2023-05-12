@@ -19,6 +19,15 @@ export const openSignUpModal = (isSign) => {
   };
 };
 
+//ACTION TO OPEN SUCCESS MODAL
+
+export const openSuccessModal = (isOpen) => {
+  return {
+    type: Action_Type.SUCCESS_MODAL,
+    payload: isOpen,
+  };
+};
+
 //ACTION FOR LOADER
 export const apiIsLoading = (loading) => {
   return {
@@ -39,6 +48,8 @@ export const routerChanging = (isOpen) => {
     payload: isOpen,
   };
 };
+
+
 //TOKEN
 const token = localStorage.getItem("token");
 // API ROUTES
@@ -59,6 +70,7 @@ export const signInUser = (user) => {
           dispatch(userDetails(resp?.user));
           dispatch(routerChanging(true));
           dispatch(openSignInModal(false));
+          dispatch(openSuccessModal(true));
         }
       })
       .catch((err) => console.log(err));
