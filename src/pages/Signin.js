@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -13,8 +12,17 @@ const Signin = () => {
   //STATE
 
   const formField = [
-    { fieldName: "Email address", name: "email" },
-    { fieldName: "Password", name: "password" },
+    {
+      fieldName: "Email address",
+      placeholder: "john@example.com",
+      name: "email",
+    },
+    {
+      fieldName: "Password",
+      placeholder: "Password",
+      name: "password",
+      type: "password",
+    },
   ];
   const [userDetails, setUserDetails] = useState("");
 
@@ -65,9 +73,10 @@ const Signin = () => {
             <Form field={formField} handleChange={handleChange} />
             <div className="d-grid mt-4 submitbtn">
               <button className="btn" onClick={signIn}>
-                Submit
+                Sign In
               </button>
             </div>
+            {/* forget password */}
             <p className="forgotlink mt-3">
               <a href="#">Forgot Password?</a>
             </p>

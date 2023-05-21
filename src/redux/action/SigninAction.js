@@ -49,7 +49,6 @@ export const routerChanging = (isOpen) => {
   };
 };
 
-
 //TOKEN
 const token = localStorage.getItem("token");
 // API ROUTES
@@ -70,8 +69,11 @@ export const signInUser = (user) => {
           dispatch(userDetails(resp?.user));
           dispatch(routerChanging(true));
           dispatch(openSignInModal(false));
+          alert(resp?.message);
           dispatch(openSuccessModal(true));
+          return;
         }
+        alert(resp?.message);
       })
       .catch((err) => console.log(err));
   };

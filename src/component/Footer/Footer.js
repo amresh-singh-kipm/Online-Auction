@@ -14,7 +14,7 @@ function Footer() {
                     <span>
                       <i className="fas fa-globe-africa"></i>
                     </span>
-                    www.igravel.com
+                    www.rapidrise.com
                   </p>
                 </li>
                 <li>

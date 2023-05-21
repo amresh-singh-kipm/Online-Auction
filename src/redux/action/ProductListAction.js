@@ -32,6 +32,7 @@ export const productList = () => {
   return (dispatch) => {
     fetch(`${config.host}${config.product.getALlProduct}`)
       .then((resp) => resp.json())
+      // .then((resp)=>console.log(resp))
       .then((resp) => dispatch(getAllProduct(resp)))
       .then(() => dispatch(apiIsLoading(false)))
       .catch((err) => console.log(err));
@@ -39,7 +40,6 @@ export const productList = () => {
 };
 
 export const productById = (id) => {
-  console.log("function is clicked")
   return (dispatch) => {
     fetch(`${config.host}${config.product.getProductById}/${id}`)
       .then((resp) => resp.json())
@@ -56,7 +56,7 @@ export const sellerProduct = (product) => {
       body: JSON.stringify(product),
     })
       .then((resp) => resp.json())
-      .then((resp)=>dispatch(openSellModal(false)))
+      .then((resp) => dispatch(openSellModal(false)))
       .catch((error) => console.log(error));
   };
 };

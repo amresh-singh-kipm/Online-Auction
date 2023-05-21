@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import SignUp from "../../pages/SignUp";
 import Signin from "../../pages/Signin";
 import SellForm from "../../pages/SellForm";
-import Success from "../Form/Success";
+// import Success from "../Form/Success";
 
 function NavbarComp() {
   const isSign = useSelector((state) => state?.isSignIn?.isOpen);
@@ -43,7 +43,8 @@ function NavbarComp() {
       <nav className="navbar navbar-expand-sm">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <img src="images/logo.png" alt="logo" />
+            <h1>Rapid Rise</h1>
+            {/* <img src="images/logo.png" alt="logo" /> */}
           </Link>
           <button
             className="navbar-toggler"
@@ -124,7 +125,7 @@ function NavbarComp() {
       </nav>
       <Signin />
       <SignUp />
-      <Success />
+      {/* <Success /> */}
     </>
   );
 }

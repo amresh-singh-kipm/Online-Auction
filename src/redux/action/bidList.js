@@ -50,6 +50,7 @@ export const submitBid = (productId, product) => {
       body: JSON.stringify(product),
     })
       .then((resp) => resp.json())
+      .then((resp) => alert(resp?.message))
       .then((resp) => dispatch(apiIsLoading(false)))
       .catch((error) => console.log(error));
   };
@@ -63,6 +64,7 @@ export const updateBid = (myBidId, bid) => {
       body: JSON.stringify(bid),
     })
       .then((resp) => resp.json())
+      .then((resp) => alert(resp?.message))
       .catch((error) => console.log(error));
   };
 };

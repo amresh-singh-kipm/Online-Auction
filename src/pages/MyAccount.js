@@ -82,7 +82,10 @@ const MyAccount = () => {
                                 price,
                                 my_bid,
                                 image,
+                                expireBid,
                               } = bid;
+                              const newDate = new Date(expireBid)
+                              const expireDate = newDate.toLocaleTimeString()
                               return (
                                 <div className="col-lg-6 col-md-6 col-sm-12 col-12">
                                   <Card>
@@ -97,11 +100,13 @@ const MyAccount = () => {
                                           250 Bids
                                         </p>
                                         <span className="card-timer">
-                                          5hrs:30min:15sec
+                                          {expireDate.slice(0,2) +"hrs" +" "+ expireDate.slice(3,4) +"mins"+ " " + expireDate.slice(6)+"sec"}
                                         </span>
                                       </div>
                                       <div className="cardtext">
-                                        <span>{description.slice(0,110)}...</span>
+                                        <span>
+                                          {description.slice(0, 110)}...
+                                        </span>
                                       </div>
                                       <div className="PriceSubmit">
                                         <div className="cardRate">
@@ -351,4 +356,3 @@ const MyAccount = () => {
 };
 
 export default MyAccount;
-

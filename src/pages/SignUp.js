@@ -14,10 +14,10 @@ function SignUp() {
 
   //FEILD FOR CREATING FORM
   const formField = [
-    { fieldName: "Full Name", name: "name" },
-    { fieldName: "Email Address", name: "email" },
-    { fieldName: "Password", name: "password" },
-    { fieldName: "Mobile Number", name: "mobile" },
+    { fieldName: "Full Name",placeholder: "John Deo" ,name:"name"},
+    { fieldName: "Email Address", placeholder: "john@example.com", name:"email" },
+    { fieldName: "Password", placeholder: "Password",name:"password"  },
+    { fieldName: "Mobile Number", placeholder: "999999999",name:"mobile"  },
   ];
   //FUNCTION TO HANDLE INPUT
   const handleChange = (e) => {
@@ -58,12 +58,9 @@ function SignUp() {
           <Form field={formField} handleChange={handleChange} />
           <div className="d-grid mt-4 submitbtn">
             <button type="button" className="btn" onClick={signUp}>
-              Submit
+              Sign Up
             </button>
           </div>
-          <p className="forgotlink mt-3">
-            <a href="/">Forgot Password?</a>
-          </p>
         </div>
       </form>
     </Modal>

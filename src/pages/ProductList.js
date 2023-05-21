@@ -7,7 +7,7 @@ import Card from "react-bootstrap/Card";
 import { productList } from "../redux/action/ProductListAction";
 import { useDispatch, useSelector } from "react-redux";
 import { submitBid } from "../redux/action/bidList";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ProductList = () => {
   //REDUX STATE FOR PRODUCT LIST
@@ -27,13 +27,8 @@ const ProductList = () => {
   //FUNCTION FOR FETCHING PRODUCT LIST
   useEffect(() => {
     dispatch(productList());
-    // .then((resp=>console.log("reso",resp)))
   }, []);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setMyBid({ ...myBid, [name]: value });
-  };
   const navigate = useNavigate();
 
   //MODAL FOR PLACING BIDS
@@ -45,6 +40,20 @@ const ProductList = () => {
   const onSubmit = (id) => {
     dispatch(submitBid(id, myBid));
   };
+  //SHOWING REMAINING TIME
+  useEffect(() => {
+    // const getTime = productList?.forEach((element) => {
+    //   const currentTime = new Date(element?.expireBid);
+    //   return currentTime;
+    // });
+    // const remainingTime =
+    //   ((currentTime) => {
+    //     const remainTime = currentTime - Date.now();
+    //     const newDate = new Date(remainTime);
+    //     const expireDate = newDate.toLocaleTimeString();
+    //   },
+    //   1000);
+  }, []);
   return (
     <>
       <div className="CardSection mt-5">
@@ -64,7 +73,7 @@ const ProductList = () => {
               <Container>
                 <Row>
                   {productlist &&
-                    productlist.map((product) => {
+                    productlist?.map((product) => {
                       const {
                         _id,
                         name,
@@ -74,10 +83,8 @@ const ProductList = () => {
                         image,
                         expireBid,
                       } = product;
-                      // const times = expireBid.toTimeString()
-                      // const hours = expireBid.getHours()
-                      // const minutes = expireBid.getMinutes()
-                      // const seconds = expireBid.getSeconds()
+                      const currentTime = new Date(expireBid).getTime();
+
                       return (
                         <Col
                           className="col-lg-3 col-md-6 col-sm-6 col-12"
@@ -94,13 +101,19 @@ const ProductList = () => {
                                   </span>
                                   250 Bids
                                 </p>
-                                <span className="card-timer">
-                                  {/* {times} */}
-                                  {/* {hours}hrs:{minutes}min:{seconds}sec */}
-                                </span>
+                                {/* <span className="card-timer">
+                                  {expireDate.slice(0, 2) +
+                                    "hrs" +
+                                    " " +
+                                    expireDate.slice(3, 4) +
+                                    "mins" +
+                                    " " +
+                                    expireDate.slice(6) +
+                                    "sec"}
+                                </span> */}
                               </div>
                               <div className="cardtext">
-                                <span>{description.slice(0,110)}...</span>
+                                <span>{description.slice(0, 110)}...</span>
                               </div>
                               <div className="PriceSubmit">
                                 <div className="cardRate">

@@ -3,10 +3,10 @@ import Slider from "react-slick";
 import { Button } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { productById } from "../redux/action/ProductListAction";
+import { getProductById, productById } from "../redux/action/ProductListAction";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { myBidById, submitBid, updateBid } from "../redux/action/bidList";
+import {  myBidById, submitBid, updateBid } from "../redux/action/bidList";
 // import { debounce } from "debounce";
 
 function ProductSell() {
@@ -32,23 +32,23 @@ function ProductSell() {
   };
 
   //REDUX STATE
-  console.log(myBid);
   const product = useSelector((state) => state?.productById.product?.product);
   const myBidDetails = useSelector(
     (state) => state?.bidById?.bid?.myBidDetails
   );
-  console.log(myBidDetails);
   const dispatch = useDispatch();
-
   //FUCTION TO BID DATE
   useEffect(() => {
     if (id) {
       dispatch(productById(id));
+      return;
     }
     if (bidId) {
       dispatch(myBidById(bidId));
+      dispatch(getProductById(null))
+      return;
     }
-  }, [id]);
+  }, [id, bidId]);
 
   //FUNCTION TO SUBMIT BID
   const submit = () => {
@@ -89,7 +89,7 @@ function ProductSell() {
                   <div className="slider-content">
                     <div className="slider-image">
                       <img
-                        src={`/${product?.image ?? myBidDetails?.image}`}
+                        src={`${product?.image ?? myBidDetails?.image}`}
                         alt="product_image"
                       />
                     </div>
@@ -130,7 +130,7 @@ function ProductSell() {
                 <div className="amountpay">
                   <div className="form-outline">
                     <input
-                      type="number"
+                      type="text"
                       id="form1"
                       placeholder="&#8377; Enter the Amount"
                       className="form-control"
@@ -141,7 +141,7 @@ function ProductSell() {
                   <div className="Cardbidbtn">
                     <Button className="Bidbtn" onClick={onSubmit}>
                       {bidId ? "Update Bid" : "Submit Bid"}
-                      &#8377;{myBid.my_bid}
+                      
                     </Button>
                   </div>
                 </div>

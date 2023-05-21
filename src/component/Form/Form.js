@@ -13,7 +13,7 @@ function Form({ field, handleChange }) {
               type={field.type ?? "text"}
               name={field.name}
               className="form-control mt-2"
-              placeholder={field.name}
+              placeholder={field.placeholder}
               onChange={(e) => handleChange(e)}
             />
           </div>
