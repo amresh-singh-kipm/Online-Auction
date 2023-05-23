@@ -7,14 +7,17 @@ import { routerChanging } from "./redux/action/SigninAction";
 
 function App() {
   const isShow = useSelector((state) => state?.isSignIn?.isOpen);
+
   const token = localStorage.getItem("token");
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (token) {
       dispatch(routerChanging(true));
     }
   }, [isShow]);
-  
+
   return (
     <div>
       {/* <NavbarComp />

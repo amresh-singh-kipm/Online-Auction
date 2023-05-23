@@ -3,7 +3,6 @@ import { Action_Type } from "../constant/Action-Type";
 
 //ACTION TO OPEN SIGN IN MODAL
 export const openSignInModal = (isSign) => {
-  console.log("reducers", isSign);
   return {
     type: Action_Type.IS_SIGN_SHOW,
     payload: isSign,
@@ -12,7 +11,6 @@ export const openSignInModal = (isSign) => {
 
 //ACTION TO OPEN SIGNUP IN MODAL
 export const openSignUpModal = (isSign) => {
-  console.log(isSign);
   return {
     type: Action_Type.IS_SIGNUP_SHOW,
     payload: isSign,
@@ -69,7 +67,6 @@ export const signInUser = (user) => {
           dispatch(userDetails(resp?.user));
           dispatch(routerChanging(true));
           dispatch(openSignInModal(false));
-          alert(resp?.message);
           dispatch(openSuccessModal(true));
           return;
         }

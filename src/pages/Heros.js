@@ -9,6 +9,7 @@ function Heros() {
   const dispatch = useDispatch();
   const isSignUp = useSelector((state) => state.isSignupModal.isSign);
   //FUNCTION TO OPEN SIGNUP
+  // const con = useSelector((state) => console.log(state));
   const [isSign, setIsSign] = useState(true);
   const token = localStorage.getItem("token");
   useEffect(() => {

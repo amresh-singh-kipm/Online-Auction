@@ -10,6 +10,7 @@ import NavbarComp from "../Navbar/NavbarComp";
 import Footer from "../Footer/Footer";
 import MyOrder from "../../pages/Myorder";
 import ProductSell from "../../pages/ProductSell";
+
 function PrivateRouter() {
   return (
     <Router>

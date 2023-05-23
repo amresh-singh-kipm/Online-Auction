@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/js/bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,35 +11,54 @@ import { Link } from "react-router-dom";
 import SignUp from "../../pages/SignUp";
 import Signin from "../../pages/Signin";
 import SellForm from "../../pages/SellForm";
+import SignInSuccess from "../../pages/SignInSuccessModal";
 // import Success from "../Form/Success";
 
 function NavbarComp() {
-  const isSign = useSelector((state) => state?.isSignIn?.isOpen);
   const dispatch = useDispatch();
+  const isSign = useSelector((state) => state?.isSignIn?.isOpen);
+
+  const token = localStorage.getItem("token");
+  const [isSignIn, setIsSignin] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const [isLoginSuccessModal, setLoginSuccessModal] = useState(false);
 
   const changeAuthMode = () => {
     dispatch(openSignInModal(true));
     // setAuthMode(authMode === "Signin" ? "Signup" : "Signin");
   };
-  const token = localStorage.getItem("token");
-  const [isSignIn, setIsSignin] = useState(false);
-  useEffect(() => {
-    if (token) {
-      setIsSignin(true);
-    } else {
-      setIsSignin(false);
-    }
-  }, [token]);
+
   const signOut = () => {
     localStorage.clear();
     setIsSignin(false);
     dispatch(routerChanging(false));
   };
-  const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
     setShowModal(true);
   };
+
+  useEffect(() => {
+    if (token) {
+      setIsSignin(true);
+
+      const loginSuccessModalShown = JSON.parse(
+        localStorage.getItem("is-login-success-modal-shown")
+      );
+
+      console.log(loginSuccessModalShown);
+
+      if (!loginSuccessModalShown) {
+        setLoginSuccessModal(true);
+
+        JSON.stringify(
+          localStorage.setItem("is-login-success-modal-shown", true)
+        );
+      }
+    }
+  }, [token]);
+
   return (
     <>
       <nav className="navbar navbar-expand-sm">
@@ -107,9 +128,27 @@ function NavbarComp() {
               </li>
               {isSignIn ? (
                 <li className="nav-item">
-                  <Link className="nav-link" to="/" onClick={signOut}>
-                    Signout
-                  </Link>
+                  <div className="avtar d-flex">
+                    <img
+                      className="rounded-circle"
+                      src="images/user.png"
+                      alt="avatar-image"
+                    />
+                    <div className="dropdown">
+                      <a
+                        href="#"
+                        className="dropdown-toggle-grey"
+                        data-bs-toggle="dropdown"
+                      >
+                        Neeraj<i className="fas fa-chevron-down"></i>
+                      </a>
+                      <div className="dropdown-menu">
+                        <Link className="nav-link" to="/" onClick={signOut}>
+                          Signout
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 </li>
               ) : (
                 <li className="nav-item">
@@ -124,6 +163,9 @@ function NavbarComp() {
       </nav>
       <Signin />
       <SignUp />
+      {isLoginSuccessModal && (
+        <SignInSuccess closeModal={() => setLoginSuccessModal(false)} />
+      )}
       {/* <Success /> */}
     </>
   );
