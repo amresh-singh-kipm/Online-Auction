@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProductById, productById } from "../redux/action/ProductListAction";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {  myBidById, submitBid, updateBid } from "../redux/action/bidList";
+import { myBidById, submitBid, updateBid } from "../redux/action/bidList";
 // import { debounce } from "debounce";
 
 function ProductSell() {
@@ -45,7 +45,7 @@ function ProductSell() {
     }
     if (bidId) {
       dispatch(myBidById(bidId));
-      dispatch(getProductById(null))
+      dispatch(getProductById(null));
       return;
     }
   }, [id, bidId]);
@@ -130,7 +130,7 @@ function ProductSell() {
                 <div className="amountpay">
                   <div className="form-outline">
                     <input
-                      type="text"
+                      type="number"
                       id="form1"
                       placeholder="&#8377; Enter the Amount"
                       className="form-control"
@@ -141,7 +141,6 @@ function ProductSell() {
                   <div className="Cardbidbtn">
                     <Button className="Bidbtn" onClick={onSubmit}>
                       {bidId ? "Update Bid" : "Submit Bid"}
-                      
                     </Button>
                   </div>
                 </div>
