@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Online-Auction/static/css/main.8882d892.css",
-    "main.js": "/Online-Auction/static/js/main.c3ae3764.js",
+    "main.css": "/Online-Auction/static/css/main.9b752819.css",
+    "main.js": "/Online-Auction/static/js/main.c7d4a2fc.js",
     "static/media/footerimage.jpg": "/Online-Auction/static/media/footerimage.5028cdb40713259f52c6.jpg",
     "static/media/slick.svg": "/Online-Auction/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/Online-Auction/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/Online-Auction/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Online-Auction/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Online-Auction/index.html",
-    "main.8882d892.css.map": "/Online-Auction/static/css/main.8882d892.css.map",
-    "main.c3ae3764.js.map": "/Online-Auction/static/js/main.c3ae3764.js.map"
+    "main.9b752819.css.map": "/Online-Auction/static/css/main.9b752819.css.map",
+    "main.c7d4a2fc.js.map": "/Online-Auction/static/js/main.c7d4a2fc.js.map"
   },
   "entrypoints": [
-    "static/css/main.8882d892.css",
-    "static/js/main.c3ae3764.js"
+    "static/css/main.9b752819.css",
+    "static/js/main.c7d4a2fc.js"
   ]
 }
