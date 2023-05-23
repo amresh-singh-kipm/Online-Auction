@@ -14,10 +14,14 @@ function SignUp() {
 
   //FEILD FOR CREATING FORM
   const formField = [
-    { fieldName: "Full Name",placeholder: "John Deo" ,name:"name"},
-    { fieldName: "Email Address", placeholder: "john@example.com", name:"email" },
-    { fieldName: "Password", placeholder: "Password",name:"password"  },
-    { fieldName: "Mobile Number", placeholder: "999999999",name:"mobile"  },
+    { fieldName: "Full Name", placeholder: "John Deo", name: "name" },
+    {
+      fieldName: "Email Address",
+      placeholder: "john@example.com",
+      name: "email",
+    },
+    { fieldName: "Password", placeholder: "Password", name: "password" },
+    { fieldName: "Mobile Number", placeholder: "+91", name: "mobile" },
   ];
   //FUNCTION TO HANDLE INPUT
   const handleChange = (e) => {

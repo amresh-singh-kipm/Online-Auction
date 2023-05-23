@@ -26,7 +26,8 @@ a:hover {
 /* Header Section Css Start */
 
 .navbar-brand img {
-  width: 100px;
+  width: 250px;
+  object-fit: cover;
 }
 
 nav.navbar.navbar-expand-sm {
@@ -72,14 +73,14 @@ a.navbar-brand {
 #collapsibleNavbar ul.dropdown-menu.underlinks.show {
   padding: 0px;
   margin: 0px;
-  border-radius: 0px;
   background-color: black;
   color: white !important;
-  left: 10px;
+  left: 15px;
 }
 
 a.dropdown-item {
   color: white;
+  padding: 15px;
 }
 
 /* Header Section Css End */
@@ -190,7 +191,6 @@ a.dropdown-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 100px 0px;
 }
 
 /* CSS given by Amresh End */
@@ -298,8 +298,11 @@ a.dropdown-item {
 
 
 /* CardSection Section CSS START */
+.CardSection {
+  padding: 100px 0px;
+}
+
 .Cardinfo-Wrapper {
-  padding-top: 50px;
   padding-bottom: 50px;
 }
 
@@ -460,6 +463,11 @@ span.card-timer {
 
 
 /* My Account css Start*/
+
+.MyAccount {
+  padding: 100px 0px;
+}
+
 .leftMenu.sticky-menu {
   position: sticky;
   top: 100px;
@@ -646,6 +654,7 @@ p#Timer {
 
 /* Buyer Form Bid CSS Start */
 
+
 textarea.productDescription:focus {
   box-shadow: none;
   outline: none;
@@ -663,6 +672,10 @@ textarea.productDescription:focus {
   border-radius: 5px;
 }
 
+.Sellingform {
+  position: relative;
+}
+
 
 /* Buyer Form Bid CSS END */
 
@@ -670,9 +683,10 @@ textarea.productDescription:focus {
 
 /* Contact Us CSS START */
 
-#ContactusSection{
-  padding-top: 100px;
+#ContactusSection {
+  padding: 100px 0px;
 }
+
 .Contactus-Page {
   background-color: white !important;
   color: black !important;
@@ -887,9 +901,10 @@ img.footerLogo {
 
 /* About Us CSS START */
 
-#aboutustab{
-  padding-top: 100px;
+#aboutustab {
+  padding: 100px 0px;
 }
+
 .Aboutus-Experience {
   background-color: white;
   color: black;
@@ -1032,9 +1047,10 @@ img.footerLogo {
 
 
 /* Product Sell CSS START */
-#ProductSell{
-  padding-top: 150px;
+#ProductSell {
+  padding: 150px 0px;
 }
+
 .ProductSell-Section {
   background-color: white !important;
   color: black !important;
@@ -1119,14 +1135,14 @@ img.footerLogo {
 /* Product Sell CSS END */
 
 .modal-header {
-	display: flex;
-	flex-shrink: 0;
-	align-items: center;
-	justify-content: space-between;
-	padding: var(--bs-modal-header-padding);
-	border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
-	border-radius: var(--bs-modal-inner-border-radius) !important;
-	border-top-right-radius: var(--bs-modal-inner-border-radius);
-	color: white;
-	border: 2px solid aliceblue;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--bs-modal-header-padding);
+  border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+  border-radius: var(--bs-modal-inner-border-radius) !important;
+  border-top-right-radius: var(--bs-modal-inner-border-radius);
+  color: white;
+  border: 2px solid aliceblue;
 }

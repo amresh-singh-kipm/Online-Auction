@@ -56,7 +56,7 @@ const ProductList = () => {
   }, []);
   return (
     <>
-      <div className="CardSection mt-5">
+      <div className="CardSection">
         {loading ? (
           <div className="loader">
             <img src="/images/loading.png" alt="loading" width={"100px"} />

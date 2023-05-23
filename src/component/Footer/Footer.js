@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 
 function Footer() {
   return (
-    <div className="FooterCopyright mt-5">
+    <div className="FooterCopyright">
       <div className="footerSection">
         <div className="row">
           <div className="col-lg-3 col-md-3 col-sm-6">

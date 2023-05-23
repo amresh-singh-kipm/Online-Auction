@@ -34,7 +34,7 @@ function NavbarComp() {
     dispatch(routerChanging(false));
   };
   const [showModal, setShowModal] = useState(false);
-  
+
   const openModal = () => {
     setShowModal(true);
   };
@@ -43,8 +43,7 @@ function NavbarComp() {
       <nav className="navbar navbar-expand-sm">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <h1>Rapid Rise</h1>
-            {/* <img src="images/logo.png" alt="logo" /> */}
+            <img src="images/logo.png" alt="logo" />
           </Link>
           <button
             className="navbar-toggler"
