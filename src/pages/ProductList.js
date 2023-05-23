@@ -134,6 +134,132 @@ const ProductList = () => {
                       );
                     })}
                 </Row>
+                <Row>
+                  {productlist &&
+                    productlist?.map((product) => {
+                      const {
+                        _id,
+                        name,
+                        description,
+                        location,
+                        price,
+                        image,
+                        expireBid,
+                      } = product;
+                      const currentTime = new Date(expireBid).getTime();
+
+                      return (
+                        <Col
+                          className="col-lg-3 col-md-6 col-sm-6 col-12"
+                          key={product._id}
+                        >
+                          <Card>
+                            <Card.Img src={image} width={"550px"} />
+                            <Card.Body>
+                              <h4 className="card-title">{name}</h4>
+                              <div className="bidstimer">
+                                <p className="peoplebids">
+                                  <span>
+                                    <i className="fas fa-gavel"></i>
+                                  </span>
+                                  250 Bids
+                                </p>
+                                {/* <span className="card-timer">
+                                  {expireDate.slice(0, 2) +
+                                    "hrs" +
+                                    " " +
+                                    expireDate.slice(3, 4) +
+                                    "mins" +
+                                    " " +
+                                    expireDate.slice(6) +
+                                    "sec"}
+                                </span> */}
+                              </div>
+                              <div className="cardtext">
+                                <span>{description.slice(0, 110)}...</span>
+                              </div>
+                              <div className="PriceSubmit">
+                                <div className="cardRate">
+                                  <span>&#8377;{price}</span>
+                                </div>
+                                <div className="Cardbidbtn">
+                                  <Button
+                                    className="Bidbtn"
+                                    onClick={() => openModal(_id)}
+                                  >
+                                    Submit a Bid
+                                  </Button>
+                                </div>
+                              </div>
+                            </Card.Body>
+                          </Card>
+                        </Col>
+                      );
+                    })}
+                </Row>
+                <Row>
+                  {productlist &&
+                    productlist?.map((product) => {
+                      const {
+                        _id,
+                        name,
+                        description,
+                        location,
+                        price,
+                        image,
+                        expireBid,
+                      } = product;
+                      const currentTime = new Date(expireBid).getTime();
+
+                      return (
+                        <Col
+                          className="col-lg-3 col-md-6 col-sm-6 col-12"
+                          key={product._id}
+                        >
+                          <Card>
+                            <Card.Img src={image} width={"550px"} />
+                            <Card.Body>
+                              <h4 className="card-title">{name}</h4>
+                              <div className="bidstimer">
+                                <p className="peoplebids">
+                                  <span>
+                                    <i className="fas fa-gavel"></i>
+                                  </span>
+                                  250 Bids
+                                </p>
+                                {/* <span className="card-timer">
+                                  {expireDate.slice(0, 2) +
+                                    "hrs" +
+                                    " " +
+                                    expireDate.slice(3, 4) +
+                                    "mins" +
+                                    " " +
+                                    expireDate.slice(6) +
+                                    "sec"}
+                                </span> */}
+                              </div>
+                              <div className="cardtext">
+                                <span>{description.slice(0, 110)}...</span>
+                              </div>
+                              <div className="PriceSubmit">
+                                <div className="cardRate">
+                                  <span>&#8377;{price}</span>
+                                </div>
+                                <div className="Cardbidbtn">
+                                  <Button
+                                    className="Bidbtn"
+                                    onClick={() => openModal(_id)}
+                                  >
+                                    Submit a Bid
+                                  </Button>
+                                </div>
+                              </div>
+                            </Card.Body>
+                          </Card>
+                        </Col>
+                      );
+                    })}
+                </Row>
               </Container>
             </div>
           </>
