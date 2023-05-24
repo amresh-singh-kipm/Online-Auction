@@ -16,7 +16,7 @@ function ProfileNavbar() {
       <div className="text-center">
         <img
           className="rounded-circle"
-          src="images/user.jpg"
+          src="images/user.png"
           alt="Your Name"
           width="150"
           height="150"

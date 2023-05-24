@@ -50,7 +50,7 @@ function MyOrder() {
                               <div className="bidstimer">
                                 <p className="peoplebids">
                                   <span>
-                                    <i class="fas fa-gavel"></i>
+                                    <i className="fas fa-gavel"></i>
                                   </span>
                                   250 Bids
                                 </p>
@@ -87,7 +87,7 @@ function MyOrder() {
                               <div className="bidstimer">
                                 <p className="peoplebids">
                                   <span>
-                                    <i class="fas fa-gavel"></i>
+                                    <i className="fas fa-gavel"></i>
                                   </span>
                                   250 Bids
                                 </p>
@@ -124,7 +124,7 @@ function MyOrder() {
                               <div className="bidstimer">
                                 <p className="peoplebids">
                                   <span>
-                                    <i class="fas fa-gavel"></i>
+                                    <i className="fas fa-gavel"></i>
                                   </span>
                                   250 Bids
                                 </p>
@@ -161,7 +161,7 @@ function MyOrder() {
                               <div className="bidstimer">
                                 <p className="peoplebids">
                                   <span>
-                                    <i class="fas fa-gavel"></i>
+                                    <i className="fas fa-gavel"></i>
                                   </span>
                                   250 Bids
                                 </p>
@@ -198,7 +198,7 @@ function MyOrder() {
                               <div className="bidstimer">
                                 <p className="peoplebids">
                                   <span>
-                                    <i class="fas fa-gavel"></i>
+                                    <i className="fas fa-gavel"></i>
                                   </span>
                                   250 Bids
                                 </p>
@@ -235,7 +235,7 @@ function MyOrder() {
                               <div className="bidstimer">
                                 <p className="peoplebids">
                                   <span>
-                                    <i class="fas fa-gavel"></i>
+                                    <i className="fas fa-gavel"></i>
                                   </span>
                                   250 Bids
                                 </p>

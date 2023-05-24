@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { sellerProduct } from "../redux/action/ProductListAction";
 import { Modal } from "react-bootstrap";
@@ -12,7 +12,7 @@ function SellForm({ showModal, setShowModal }) {
     { fieldName: " Product Location", name: "location" },
     { fieldName: "  Product Description", name: "description" },
     { fieldName: "Product Photo", name: "image", type: "file" },
-    { fieldName: " Product Price", name: "price" },
+    { fieldName: " Product Price", name: "price", type: "number" },
   ];
 
   const [productDetails, setProductDetails] = useState("");

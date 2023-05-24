@@ -59,6 +59,8 @@ function NavbarComp() {
     }
   }, [token]);
 
+  const userDetails = JSON.parse(localStorage.getItem("user"));
+
   return (
     <>
       <nav className="navbar navbar-expand-sm">
@@ -140,7 +142,8 @@ function NavbarComp() {
                         className="dropdown-toggle-grey"
                         data-bs-toggle="dropdown"
                       >
-                        Neeraj<i className="fas fa-chevron-down"></i>
+                        {userDetails?.name}
+                        <i className="fas fa-chevron-down"></i>
                       </a>
                       <div className="dropdown-menu">
                         <Link className="nav-link" to="/" onClick={signOut}>
