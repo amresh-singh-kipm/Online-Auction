@@ -124,9 +124,9 @@ function Footer() {
       <div className="CopyrightSection">
         <p>
           <span>
-            <i className="far fa-copyright"></i>
+            <i className="far fa-copyright"> </i>
           </span>
-          2023 iGRAVEL AUCTION. All rights reserved.
+          2023 RapidRise Auction. All rights reserved.
         </p>
       </div>
     </div>

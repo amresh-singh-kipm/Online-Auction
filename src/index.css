@@ -582,7 +582,6 @@ span.card-timer {
   font-size: 25px;
   font-weight: bold;
   padding-top: 20px;
-  margin: 0px;
   text-transform: uppercase;
 }
 
@@ -1109,7 +1108,7 @@ img.footerLogo {
 
 /* Product Sell CSS START */
 #ProductSell {
-  padding: 150px 0px;
+  padding: 100px 0px;
 }
 
 .ProductSell-Section {
