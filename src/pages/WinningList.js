@@ -9,8 +9,8 @@ function WinningList() {
         <div className="WinningBidsTab" id="winningBids">
           <div className="Breadcrumb">
             <Breadcrumb>
-              <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#8594;
-              <Breadcrumb.Item href="#">My Account</Breadcrumb.Item>&#8594;
+              <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#x3e;
+              <Breadcrumb.Item href="#">My Account</Breadcrumb.Item>&#x3e;
               <Breadcrumb.Item active>Winning Bids</Breadcrumb.Item>
             </Breadcrumb>
           </div>

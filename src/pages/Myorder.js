@@ -9,8 +9,8 @@ function MyOrder() {
         <div className="MyorderTab" id="myOrder">
           <div className="Breadcrumb">
             <Breadcrumb>
-              <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#8594;
-              <Breadcrumb.Item href="#">My Account</Breadcrumb.Item>&#8594;
+              <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#x3e;
+              <Breadcrumb.Item href="#">My Account</Breadcrumb.Item>&#x3e;
               <Breadcrumb.Item active>My Order</Breadcrumb.Item>
             </Breadcrumb>
           </div>

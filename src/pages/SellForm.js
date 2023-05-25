@@ -8,11 +8,32 @@ function SellForm({ showModal, setShowModal }) {
   //LOCAL STATE FOR ADDING PRODUCT
 
   const formField = [
-    { fieldName: "Product Name", name: "name" },
-    { fieldName: " Product Location", name: "location" },
-    { fieldName: "  Product Description", name: "description" },
-    { fieldName: "Product Photo", name: "image", type: "file" },
-    { fieldName: " Product Price", name: "price", type: "number" },
+    {
+      fieldName: "Product Name",
+      name: "name",
+      placeholder: "John Doe",
+    },
+    {
+      fieldName: " Product Location",
+      name: "location",
+      placeholder: "Enter the Location",
+    },
+    {
+      fieldName: "  Product Description",
+      name: "description",
+      placeholder: "Antique etc",
+    },
+    {
+      fieldName: "Product Photo",
+      name: "image",
+      type: "file",
+    },
+    {
+      fieldName: " Product Price",
+      name: "price",
+      type: "number",
+      placeholder: "Enter the Amount",
+    },
   ];
 
   const [productDetails, setProductDetails] = useState("");

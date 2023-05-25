@@ -24,23 +24,35 @@ function ProfileNavbar() {
         <h4 className="userName">{userDetails?.name}</h4>
         <span>{userDetails.email}</span>
         <ul className="nav flex-column">
-          <li className="nav-item">
+          <li className="nav-item d-flex">
             <Link className="nav-link" to="/account">
+              <span className="leftmenuIcon">
+                <i class="fas fa-gavel"></i>
+              </span>{" "}
               My Bids
             </Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item d-flex">
             <Link className="nav-link" to="/order">
+              <span className="leftmenuIcon">
+                <i class="fas fa-shopping-basket"></i>
+              </span>
               My Order
             </Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item d-flex">
             <Link className="nav-link" to="/winninglist">
+              <span className="leftmenuIcon">
+                <i class="fas fa-shopping-cart"></i>
+              </span>{" "}
               Winning Bids
             </Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item d-flex">
             <Link className="nav-link" to="/" onClick={signOut}>
+              <span className="leftmenuIcon">
+                <i class="fas fa-sign-out-alt"></i>
+              </span>{" "}
               Logout
             </Link>
           </li>

@@ -76,7 +76,7 @@ function ProductSell() {
       <div id="ProductSell">
         <div className="Breadcrumb">
           <Breadcrumb>
-            <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#8594;
+            <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#x3e;
             <Breadcrumb.Item active>Place Bids</Breadcrumb.Item>
           </Breadcrumb>
         </div>

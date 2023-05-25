@@ -15,7 +15,7 @@ function ContactUs() {
       <div className="container">
         <div className="Breadcrumb">
           <Breadcrumb>
-            <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#8594;
+            <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#x3e;
             <Breadcrumb.Item active>Contact Us</Breadcrumb.Item>
           </Breadcrumb>
         </div>
