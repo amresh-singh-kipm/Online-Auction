@@ -39,10 +39,11 @@ function NavbarComp() {
     setShowModal(true);
   };
 
+  const userDetails= JSON.parse(localStorage.getItem("user")) 
   useEffect(() => {
     if (token) {
       setIsSignin(true);
-
+      
       const loginSuccessModalShown = JSON.parse(
         localStorage.getItem("is-login-success-modal-shown")
       );
@@ -59,6 +60,10 @@ function NavbarComp() {
     }
   }, [token]);
 
+  const closeModal = () => {
+    // const timer = setTimeout(()=>setLoginSuccessModal(false),1000)
+    setLoginSuccessModal(false);
+  };
   return (
     <>
       <nav className="navbar navbar-expand-sm">
@@ -140,7 +145,7 @@ function NavbarComp() {
                         className="dropdown-toggle-grey"
                         data-bs-toggle="dropdown"
                       >
-                        Neeraj<i className="fas fa-chevron-down"></i>
+                      {userDetails?.name}  <i className="fas fa-chevron-down"></i>
                       </a>
                       <div className="dropdown-menu">
                         <Link className="nav-link" to="/" onClick={signOut}>
@@ -163,9 +168,7 @@ function NavbarComp() {
       </nav>
       <Signin />
       <SignUp />
-      {isLoginSuccessModal && (
-        <SignInSuccess closeModal={() => setLoginSuccessModal(false)} />
-      )}
+      {isLoginSuccessModal && <SignInSuccess closeModal={closeModal} />}
       {/* <Success /> */}
     </>
   );

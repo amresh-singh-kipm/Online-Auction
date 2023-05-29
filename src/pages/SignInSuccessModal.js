@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function SignInSuccess({ closeModal }) {
+  useEffect(() => {
+    const timer = (setTimeout = (() => closeModal, 3000));
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div className="login-success-modal">
       <div className="overlay" onClick={closeModal} />

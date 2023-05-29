@@ -81,7 +81,7 @@ function ContactUs() {
                   <li className="Heading-Content">
                     <p>
                       <span>
-                        <i class="fas fa-location-arrow"></i>
+                        <i className="fas fa-location-arrow"></i>
                       </span>
                       D-8, Noida Sector 3, Pincode:201301
                     </p>
@@ -92,13 +92,13 @@ function ContactUs() {
                   <li className="Heading-Content">
                     <p>
                       <span>
-                        <i class="fas fa-phone-alt"></i>
+                        <i className="fas fa-phone-alt"></i>
                       </span>
                       +91 8318464600
                     </p>
                     <p>
                       <span>
-                        <i class="fas fa-phone-alt"></i>
+                        <i className="fas fa-phone-alt"></i>
                       </span>
                       +91 7905782562
                     </p>
@@ -109,7 +109,7 @@ function ContactUs() {
                   <li className="Heading-Content">
                     <p>
                       <span>
-                        <i class="fas fa-envelope"></i>
+                        <i className="fas fa-envelope"></i>
                       </span>
                       www.rapidrise.co.in
                     </p>

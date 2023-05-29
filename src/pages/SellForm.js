@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { sellerProduct } from "../redux/action/ProductListAction";
 import { Modal } from "react-bootstrap";
@@ -23,6 +23,24 @@ function SellForm({ showModal, setShowModal }) {
     setProductDetails({ ...productDetails, [name]: value });
   };
 
+  //CONVERT IMAGE INTO BASE 64
+  const encodeImage = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  };
+
+  //HANDLE FUCTION TO UPLOAD IMAGE
+  const handleImage = (e) => {
+    const file = e.target.files[0];
+    console.log("based", file);
+    const base64 = encodeImage(file);
+    console.log("based", base64);
+    setProductDetails({ ...productDetails, image: base64 });
+  };
   //FUNCTION FOR SELLING PRODUCT
   const onSubmit = () => {
     dispatch(sellerProduct(productDetails));
@@ -36,7 +54,11 @@ function SellForm({ showModal, setShowModal }) {
       <form className="Auth-form">
         <div className="Auth-form-content">
           <h3 className="Auth-form-title mb-4">Sell Product</h3>
-          <Form field={formField} handleChange={handleChange} />
+          <Form
+            field={formField}
+            handleChange={handleChange}
+            handleImage={handleImage}
+          />
           <div className="form-text mt-3">
             <p>
               Your personal data will be used to support your experience
