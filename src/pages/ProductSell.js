@@ -7,6 +7,7 @@ import { getProductById, productById } from "../redux/action/ProductListAction";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { myBidById, submitBid, updateBid } from "../redux/action/bidList";
+// eslint-disable-next-line no-unused-vars
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 // import { debounce } from "debounce";
 

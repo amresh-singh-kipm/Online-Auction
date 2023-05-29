@@ -1312,3 +1312,23 @@ img.footerLogo {
 }
 
 /* Login Successful Modal End */
+
+
+/* Payment gateway Section Start */
+
+.paymentSection {
+  box-shadow: 0px 6px 18px 0px rgba(16, 5, 54, 0.17);
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  padding: 50px;
+  margin: 50px 0px;
+}
+
+.paymentSection .form-control:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+/* Payment gateway Section End */

@@ -4,6 +4,7 @@ import PublicRouter from "./component/Router/PublicRouter";
 import PrivateRouter from "./component//Router/PrivateRouter";
 import { useDispatch, useSelector } from "react-redux";
 import { routerChanging } from "./redux/action/SigninAction";
+import Payment from "./pages/Payment";
 
 function App() {
   const isShow = useSelector((state) => state?.isSignIn?.isOpen);
@@ -26,6 +27,7 @@ function App() {
       <Signin />
       <SignUp/> */}
       {isShow ? <PrivateRouter /> : <PublicRouter />}
+      <Payment />
     </div>
   );
 }
