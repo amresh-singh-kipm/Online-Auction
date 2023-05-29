@@ -7,6 +7,8 @@ import { getProductById, productById } from "../redux/action/ProductListAction";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { myBidById, submitBid, updateBid } from "../redux/action/bidList";
+// eslint-disable-next-line no-unused-vars
+import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 // import { debounce } from "debounce";
 
 function ProductSell() {
@@ -73,6 +75,12 @@ function ProductSell() {
   return (
     <div className="container">
       <div id="ProductSell">
+        <div className="Breadcrumb">
+          <Breadcrumb>
+            <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#x3e;
+            <Breadcrumb.Item active>Place Bids</Breadcrumb.Item>
+          </Breadcrumb>
+        </div>
         <div className="ProductSell-Section">
           <div className="row">
             <div className="col-lg-5 col-md-5 col-sm-12">
@@ -89,7 +97,7 @@ function ProductSell() {
                   <div className="slider-content">
                     <div className="slider-image">
                       <img
-                        src={`${product?.image ?? myBidDetails?.image}`}
+                        src={`/${product?.image ?? myBidDetails?.image}`}
                         alt="product_image"
                       />
                     </div>

@@ -44,8 +44,8 @@ const MyAccount = () => {
           <div className="MyBidsTab">
             <div className="Breadcrumb">
               <Breadcrumb>
-                <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#8594;
-                <Breadcrumb.Item href="#">My Account</Breadcrumb.Item>&#8594;
+                <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#x3e;
+                <Breadcrumb.Item href="#">My Account</Breadcrumb.Item>&#x3e;
                 <Breadcrumb.Item active>My Bids</Breadcrumb.Item>
               </Breadcrumb>
             </div>
@@ -84,8 +84,8 @@ const MyAccount = () => {
                                 image,
                                 expireBid,
                               } = bid;
-                              const newDate = new Date(expireBid)
-                              const expireDate = newDate.toLocaleTimeString()
+                              const newDate = new Date(expireBid);
+                              const expireDate = newDate.toLocaleTimeString();
                               return (
                                 <div className="col-lg-6 col-md-6 col-sm-12 col-12">
                                   <Card>
@@ -95,12 +95,19 @@ const MyAccount = () => {
                                       <div className="bidstimer">
                                         <p className="peoplebids">
                                           <span>
-                                            <i class="fas fa-gavel"></i>
+                                            <i className="fas fa-gavel"></i>
                                           </span>
                                           250 Bids
                                         </p>
                                         <span className="card-timer">
-                                          {expireDate.slice(0,2) +"hrs" +" "+ expireDate.slice(3,4) +"mins"+ " " + expireDate.slice(6)+"sec"}
+                                          {expireDate.slice(0, 2) +
+                                            "hrs" +
+                                            " " +
+                                            expireDate.slice(3, 4) +
+                                            "mins" +
+                                            " " +
+                                            expireDate.slice(6) +
+                                            "sec"}
                                         </span>
                                       </div>
                                       <div className="cardtext">
@@ -134,7 +141,7 @@ const MyAccount = () => {
                                 <div className="bidstimer">
                                   <p className="peoplebids">
                                     <span>
-                                      <i class="fas fa-gavel"></i>
+                                      <i className="fas fa-gavel"></i>
                                     </span>
                                     250 Bids
                                   </p>
@@ -168,7 +175,7 @@ const MyAccount = () => {
                                 <div className="bidstimer">
                                   <p className="peoplebids">
                                     <span>
-                                      <i class="fas fa-gavel"></i>
+                                      <i className="fas fa-gavel"></i>
                                     </span>
                                     250 Bids
                                   </p>
@@ -204,7 +211,7 @@ const MyAccount = () => {
                                 <div className="bidstimer">
                                   <p className="peoplebids">
                                     <span>
-                                      <i class="fas fa-gavel"></i>
+                                      <i className="fas fa-gavel"></i>
                                     </span>
                                     250 Bids
                                   </p>
@@ -240,7 +247,7 @@ const MyAccount = () => {
                                 <div className="bidstimer">
                                   <p className="peoplebids">
                                     <span>
-                                      <i class="fas fa-gavel"></i>
+                                      <i className="fas fa-gavel"></i>
                                     </span>
                                     250 Bids
                                   </p>
@@ -276,7 +283,7 @@ const MyAccount = () => {
                                 <div className="bidstimer">
                                   <p className="peoplebids">
                                     <span>
-                                      <i class="fas fa-gavel"></i>
+                                      <i className="fas fa-gavel"></i>
                                     </span>
                                     250 Bids
                                   </p>
@@ -312,7 +319,7 @@ const MyAccount = () => {
                                 <div className="bidstimer">
                                   <p className="peoplebids">
                                     <span>
-                                      <i class="fas fa-gavel"></i>
+                                      <i className="fas fa-gavel"></i>
                                     </span>
                                     250 Bids
                                   </p>

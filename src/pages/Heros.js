@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/js/bootstrap";
 import ProductList from "./ProductList";

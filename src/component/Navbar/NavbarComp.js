@@ -65,9 +65,9 @@ function NavbarComp() {
     setLoginSuccessModal(false);
   };
   return (
-    <>
+    <header>
       <nav className="navbar navbar-expand-sm">
-        <div className="container-fluid">
+        <div className="container">
           <Link className="navbar-brand" to="/">
             <img src="images/logo.png" alt="logo" />
           </Link>
@@ -149,7 +149,7 @@ function NavbarComp() {
                       </a>
                       <div className="dropdown-menu">
                         <Link className="nav-link" to="/" onClick={signOut}>
-                          Signout
+                          Logout
                         </Link>
                       </div>
                     </div>
@@ -170,7 +170,7 @@ function NavbarComp() {
       <SignUp />
       {isLoginSuccessModal && <SignInSuccess closeModal={closeModal} />}
       {/* <Success /> */}
-    </>
+    </header>
   );
 }
 

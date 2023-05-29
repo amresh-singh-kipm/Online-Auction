@@ -16,6 +16,9 @@ function SignInSuccess({ closeModal }) {
           </div>
           <div className="login-content">
             <h1>Login Successful</h1>
+            <button className="btn" onClick={closeModal}>
+              Welcome
+            </button>
           </div>
         </div>
       </div>

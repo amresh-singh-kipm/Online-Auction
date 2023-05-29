@@ -57,7 +57,7 @@ function SignUp() {
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign Up</h3>
           <div className="text-center Auth-form-text">
-            Already registered? <span onClick={changeAuthMode}>Sign In</span>
+            Already registered? <span onClick={changeAuthMode}>Login</span>
           </div>
           <Form field={formField} handleChange={handleChange} />
           <div className="d-grid mt-4 submitbtn">

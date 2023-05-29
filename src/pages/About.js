@@ -2,13 +2,16 @@ import { Breadcrumb } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 function About() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className="Aboutus-Section" id="aboutustab">
       <div className="container">
         <div className="Breadcrumb">
           <Breadcrumb>
-            <Breadcrumb.Item onClick={()=>navigate('/')}>Home</Breadcrumb.Item>&#8594;
+            <Breadcrumb.Item onClick={() => navigate("/")}>
+              Home
+            </Breadcrumb.Item>
+            &#x3e;
             <Breadcrumb.Item active>About Us</Breadcrumb.Item>
           </Breadcrumb>
         </div>

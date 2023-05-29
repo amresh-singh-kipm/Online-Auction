@@ -73,7 +73,7 @@ const Signin = () => {
             <Form field={formField} handleChange={handleChange} />
             <div className="d-grid mt-4 submitbtn">
               <button className="btn" onClick={signIn}>
-                Sign In
+                Login
               </button>
             </div>
             {/* forget password */}

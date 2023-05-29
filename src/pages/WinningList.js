@@ -6,17 +6,17 @@ function WinningList() {
   return (
     <div className="MyAccount">
       <div className="container">
-      <div className="WinningBidsTab" id="winningBids">
+        <div className="WinningBidsTab" id="winningBids">
           <div className="Breadcrumb">
             <Breadcrumb>
-              <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#8594;
-              <Breadcrumb.Item href="#">My Account</Breadcrumb.Item>&#8594;
+              <Breadcrumb.Item href="#">Home</Breadcrumb.Item>&#x3e;
+              <Breadcrumb.Item href="#">My Account</Breadcrumb.Item>&#x3e;
               <Breadcrumb.Item active>Winning Bids</Breadcrumb.Item>
             </Breadcrumb>
           </div>
           <div className="row">
             <div className="col-lg-4 col-md-4 col-sm-4 col-12">
-             <ProfileNavbar/>
+              <ProfileNavbar />
             </div>
             <div className="col-lg-8 col-md-8 col-sm-8 col-12">
               <div className="rightMenu">
@@ -50,7 +50,7 @@ function WinningList() {
                               <div className="bidstimer">
                                 <p className="peoplebids">
                                   <span>
-                                    <i class="fas fa-gavel"></i>
+                                    <i className="fas fa-gavel"></i>
                                   </span>
                                   250 Bids
                                 </p>
@@ -84,7 +84,7 @@ function WinningList() {
                               <div className="bidstimer">
                                 <p className="peoplebids">
                                   <span>
-                                    <i class="fas fa-gavel"></i>
+                                    <i className="fas fa-gavel"></i>
                                   </span>
                                   250 Bids
                                 </p>
@@ -118,7 +118,7 @@ function WinningList() {
                               <div className="bidstimer">
                                 <p className="peoplebids">
                                   <span>
-                                    <i class="fas fa-gavel"></i>
+                                    <i className="fas fa-gavel"></i>
                                   </span>
                                   250 Bids
                                 </p>
@@ -152,7 +152,7 @@ function WinningList() {
                               <div className="bidstimer">
                                 <p className="peoplebids">
                                   <span>
-                                    <i class="fas fa-gavel"></i>
+                                    <i className="fas fa-gavel"></i>
                                   </span>
                                   250 Bids
                                 </p>
@@ -186,7 +186,7 @@ function WinningList() {
                               <div className="bidstimer">
                                 <p className="peoplebids">
                                   <span>
-                                    <i class="fas fa-gavel"></i>
+                                    <i className="fas fa-gavel"></i>
                                   </span>
                                   250 Bids
                                 </p>
@@ -220,7 +220,7 @@ function WinningList() {
                               <div className="bidstimer">
                                 <p className="peoplebids">
                                   <span>
-                                    <i class="fas fa-gavel"></i>
+                                    <i className="fas fa-gavel"></i>
                                   </span>
                                   250 Bids
                                 </p>
